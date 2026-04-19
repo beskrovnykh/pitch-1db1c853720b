@@ -2,7 +2,7 @@
 <html lang="ru">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="robots" content="noindex,nofollow">
   <title>Pitch · Андрей Бескровных</title>
 
@@ -262,6 +262,34 @@
       font-weight: 600;
     }
 
+    /* mobile hint */
+    #mobile-hint {
+      display: none;
+      position: fixed;
+      top: 12px;
+      left: 12px;
+      right: 12px;
+      z-index: 9999;
+      background: var(--ink);
+      color: var(--paper);
+      font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+      font-size: 13px;
+      line-height: 1.4;
+      padding: 10px 14px;
+      border-radius: 8px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.25);
+    }
+    #mobile-hint .close {
+      float: right;
+      margin-left: 10px;
+      cursor: pointer;
+      color: #ff6b6b;
+      font-weight: 700;
+    }
+    @media (max-width: 768px) {
+      #mobile-hint { display: block; }
+    }
+
     .arch-diagram {
       background: #f6f3ea;
       border: 1px solid var(--line);
@@ -295,6 +323,11 @@
   </style>
 </head>
 <body>
+
+<div id="mobile-hint">
+  <span class="close" onclick="this.parentElement.style.display='none'">✕</span>
+  Презентация сделана под десктоп. Лучше откройте с ноутбука. На мобилке — зумируйте пальцами, листайте свайпом.
+</div>
 
 <div class="reveal">
   <div class="slides">
@@ -1152,8 +1185,9 @@
     width: 1440,
     height: 900,
     margin: 0,
-    minScale: 0.2,
-    maxScale: 2.0
+    minScale: 0.08,
+    maxScale: 2.5,
+    touch: true
   });
 </script>
 
