@@ -688,82 +688,31 @@
       </div>
     </section>
 
-    <!-- 13. DIVIDER — Case 3 Salomander -->
-    <section class="section-divider">
-      <h4>Case 03 · 2024 · GameTech · Tech Lead</h4>
-      <h1>Salomander Games</h1>
-      <h3>Call of the Shadows. Три месяца в роли tech lead в чужой команде — по архитектуре, заложенной техническим директором.</h3>
-    </section>
-
-    <!-- 13. Salomander story -->
+    <!-- 13. Salomander — condensed single slide -->
     <section>
       <div class="slide-pad">
-        <div class="eyebrow">3 месяца как tech lead · новый для меня домен (GameTech)</div>
-        <h2 style="max-width: 26ch;">Крупные фичи в прод. Качество — в CI. Преемник ведёт проект до сих пор.</h2>
-        <div class="grid-2" style="margin-top: 1.2em;">
+        <div class="eyebrow">Case 03 · 2024 · GameTech · 3 месяца как tech lead</div>
+        <h2 style="max-width: 26ch;">Вошёл в чужую архитектуру, лидировал команду до релиза, вырастил преемника.</h2>
+
+        <div class="grid-2" style="margin-top: 1.2em; gap: 2.5vw;">
           <ul class="clean">
             <li><strong>Лидировал команду до выхода в прод</strong> — довёл фичи и процесс до релиз-готовности</li>
             <li><strong>Owner нескольких крупных фич</strong>: от обсуждения архитектуры с CTO до реализации в коде</li>
-            <li><strong>Внедрил SonarQube в CI команды</strong> — автопроверка качества на каждый PR, баги ловятся до ревью</li>
+            <li><strong>Внедрил SonarQube в CI</strong> — автопроверка качества на каждый PR</li>
           </ul>
           <ul class="clean">
-            <li><strong>Декомпозировал задачи</strong> для команды и <strong>организовал прозрачный процесс разработки</strong></li>
-            <li><strong>Вырастил инженера-преемника</strong> — он ведёт проект самостоятельно <strong>до сих пор</strong></li>
+            <li><strong>Декомпозировал задачи</strong> для команды, организовал прозрачный процесс разработки</li>
+            <li><strong>Вырастил инженера-преемника</strong> — он ведёт проект <strong>до сих пор</strong></li>
+            <li>Реализовывал архитектуру <strong>технического директора</strong> — без эго-переписываний</li>
           </ul>
         </div>
-        <div style="margin-top: 1.5em; padding: 0.8em 1em; background: #fff3ec; border-left: 4px solid var(--accent); border-radius: 0 6px 6px 0;">
-          <p style="margin: 0; font-size: 0.88em; line-height: 1.4;">
-            <strong>Продукт в проде:</strong> игра Call of the Shadows, ~3 000 пользователей/мес.
-          </p>
-        </div>
-        <p style="font-size: 0.78em; color: var(--muted); margin-top: 1.2em; max-width: 56em; line-height: 1.5;">
-          Ценность кейса для Unimatch — быстрое погружение в новый домен за 3 месяца, зрелая связка с CTO без эго, и преемственность, проверенная временем.
-        </p>
-      </div>
-    </section>
 
-    <!-- 14. Salomander context — project architecture (CTO's design) -->
-    <section>
-      <div class="slide-pad">
-        <div class="eyebrow">Контекст проекта · Архитектура CTO</div>
-        <h2 style="max-width: 24ch;">Проект, в который я пришёл: 9 микросервисов на Kubernetes.</h2>
-        <div style="padding: 0.7em 1em; background: #f4f1e8; border-left: 3px solid var(--muted); border-radius: 0 6px 6px 0; margin-top: 0.8em; font-size: 0.82em; color: var(--muted);">
-          <strong style="color: var(--ink);">Важно:</strong> архитектура заложена техническим директором до меня. Я реализовывал фичи и лидировал команду в её рамках — не строил эту инфраструктуру с нуля.
+        <div style="margin-top: 1.2em; padding: 0.7em 1em; background: #f4f1e8; border-left: 3px solid var(--muted); border-radius: 0 6px 6px 0; font-size: 0.78em; color: var(--muted);">
+          <strong style="color: var(--ink);">Контекст проекта:</strong> production-система на Kubernetes (GitOps, Helm, Terraform, SonarQube, observability-стек). Архитектура заложена CTO до меня — я лидировал реализацию. Продукт в проде: <strong style="color: var(--ink);">~3 000 пользователей/мес</strong>.
         </div>
-        <div class="arch-diagram" style="margin-top: 1em;">
-          <div class="group-label">Core domain services</div>
-          <div class="row">
-            <span class="box accent">engine</span>
-            <span class="box accent">battle</span>
-            <span class="box accent">equipment</span>
-            <span class="box accent">profile</span>
-            <span class="box accent">market</span>
-          </div>
-          <div class="group-label">Edge &amp; integration</div>
-          <div class="row">
-            <span class="box">gateway</span>
-            <span class="box">telegram</span>
-            <span class="box">cms (Strapi)</span>
-          </div>
-          <div class="group-label">AI generation pipeline</div>
-          <div class="row">
-            <span class="box">content-generator</span>
-            <span class="box">prompt-generator</span>
-          </div>
-          <div class="group-label">Infrastructure / CI / CD</div>
-          <div class="row">
-            <span class="box">Kubernetes</span>
-            <span class="box">ArgoCD</span>
-            <span class="box">Helm</span>
-            <span class="box">Terraform</span>
-            <span class="box">RabbitMQ</span>
-            <span class="box">Jaeger</span>
-            <span class="box">Vault</span>
-            <span class="box">SonarQube</span>
-          </div>
-        </div>
-        <p style="font-size: 0.75em; color: var(--muted); margin-top: 1em;">
-          Показываю масштаб проекта, чтобы было понятно: это не pet-проект, а production-система с 9 сервисами, K8s, GitOps и observability-стеком. Работать в такой среде tech lead-ом — другой уровень контекста, чем в маленькой команде.
+
+        <p style="font-size: 0.78em; color: var(--muted); margin-top: 1em; max-width: 58em; line-height: 1.5;">
+          Ценность кейса — быстрое погружение в новый домен, зрелая связка с CTO, и преемственность, проверенная временем.
         </p>
       </div>
     </section>
