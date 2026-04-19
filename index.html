@@ -857,128 +857,27 @@
       </div>
     </section>
 
-    <!-- 16b. FinTech B2C (stealth) technical detail -->
+    <!-- 16b. FinTech B2C (stealth) — artifacts mosaic (consolidated) -->
     <section>
       <div class="slide-pad">
-        <div class="eyebrow">Что внутри</div>
-        <h2 style="max-width: 22ch;">5 сервисов под мобильное приложение по CME Futures → Forex.</h2>
-        <div class="grid-2" style="margin-top: 1.2em;">
-          <ul class="clean">
-            <li>Real-time стриминг через <strong>Databento</strong> (OHLCV 1s/1m/1h/1d), автосклейка контрактов при экспирации фьючерсов</li>
-            <li><strong>WebSocket API</strong> на Node.js/TypeScript, in-memory кэш ~5M записей, денормализация и индексы</li>
-            <li><strong>15+ индикаторов</strong>: ATR-каналы, уровни поддержки/сопротивления, пин-бары, касания уровней, объёмные маркировки</li>
-            <li><strong>Фреймворк регресс-тестирования</strong> с автовалидаторами и baseline-сравнением</li>
-          </ul>
-          <ul class="clean">
-            <li><strong>CRM</strong>: JWT (2 типа токенов), RBAC, NowPayments, AdminJS — полный биллинг</li>
-            <li><strong>Forex-сервис</strong>: PostgreSQL + TimescaleDB, Redis Pub/Sub, WS gateway с горизонтальным scale</li>
-            <li><strong>CI/CD</strong> (GitLab) по 5 проектам, Docker, централизованные секреты через Infisical</li>
-            <li><strong>5 сервисов, 1 CTO</strong>: core, ctrader, crm-back, web-server, infrastructure</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <!-- 17. FinTech B2C (stealth) artifacts — tech docs + AI-native -->
-    <section>
-      <div class="slide-pad">
-        <div class="grid-2 align-center" style="gap: 4vw;">
-          <div class="photo-cell" style="height: 75vh; background: #0d1117; display: flex; align-items: flex-start; justify-content: center;">
-            <img src="photos/uniqlab_atr_doc.jpg" class="photo-contain" alt="FinTech B2C (stealth) — ATR алгоритм, документация">
+        <div class="eyebrow">Артефакты · Архитектура, модель данных, алгоритмы</div>
+        <h2 style="max-width: 28ch;">Система в документации: архитектура, поток данных, схема пользователя, индикаторы.</h2>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr; gap: 1vw; margin-top: 0.8em; flex: 1; min-height: 0;">
+          <div class="photo-cell" style="background: #0d1117; display: flex; align-items: center; justify-content: center; padding: 0.5em; border: 1px solid var(--line); min-height: 0;">
+            <img src="photos/uniqlab_arch_system.png" style="max-width: 100%; max-height: 100%; width: auto; height: auto; object-fit: contain; display: block;" alt="архитектура системы">
           </div>
-          <div>
-            <div class="eyebrow">Артефакты · Документация и код</div>
-            <h2>Техническая документация + AI-native codebase.</h2>
-            <ul class="clean" style="margin-top: 1em;">
-              <li><strong>Документация алгоритмов</strong>: ATR-каналы, расчёт уровней, эволюция индикаторов — <em>на скриншоте</em></li>
-              <li><strong>AI-native codebase</strong>: каждый из 5 сервисов имеет <code>CLAUDE.md</code> и <code>AGENTS.md</code> — агенты работают в проде как полноценные инженеры</li>
-              <li><strong>Архитектурная презентация</strong> — standalone HTML в <code>docs/</code> для онбординга</li>
-              <li><strong>Landing</strong> (Next.js) + WordPress для контента — весь go-to-market stack</li>
-            </ul>
+          <div class="photo-cell" style="background: #0d1117; display: flex; align-items: center; justify-content: center; padding: 0.5em; border: 1px solid var(--line); min-height: 0;">
+            <img src="photos/uniqlab_arch_dataflow.png" style="max-width: 100%; max-height: 100%; width: auto; height: auto; object-fit: contain; display: block;" alt="поток данных">
+          </div>
+          <div class="photo-cell" style="background: white; display: flex; align-items: center; justify-content: center; padding: 0.5em; border: 1px solid var(--line); min-height: 0;">
+            <img src="photos/uniqlab_crm_schema.png" style="max-width: 100%; max-height: 100%; width: auto; height: auto; object-fit: contain; display: block;" alt="схема пользователя">
+          </div>
+          <div class="photo-cell" style="background: #0d1117; display: flex; align-items: center; justify-content: center; padding: 0.5em; border: 1px solid var(--line); min-height: 0;">
+            <img src="photos/uniqlab_arch_indicators.png" style="max-width: 100%; max-height: 100%; width: auto; height: auto; object-fit: contain; display: block;" alt="каталог индикаторов">
           </div>
         </div>
-      </div>
-    </section>
-
-    <!-- 18. FinTech B2C (stealth) — planning process (text only, no screenshots) -->
-    <section>
-      <div class="slide-pad">
-        <div class="eyebrow">Как я планирую и работаю</div>
-        <h2 style="max-width: 28ch;">Прозрачный процесс: недельные спринты + CTO review готовности к релизу.</h2>
-        <div class="grid-2" style="margin-top: 1.5em; gap: 3vw;">
-          <div style="padding: 1em 1.2em; background: #f6f3ea; border-left: 3px solid var(--accent-2); border-radius: 0 6px 6px 0;">
-            <div class="eyebrow" style="font-size: 0.7em; margin-bottom: 0.5em;">Недельные спринты</div>
-            <ul class="clean" style="font-size: 0.9em;">
-              <li>Декомпозиция крупных целей на задачи на одну неделю</li>
-              <li>Трекинг статусов: <em>выполнено / в работе / перенесено / отменено</em></li>
-              <li>Разбивка по функциональным зонам системы</li>
-              <li>В конце недели — итог и переоценка: что сдвигаем в следующий спринт</li>
-              <li>Открытые вопросы и риски — отдельный раздел, не теряются между спринтами</li>
-            </ul>
-          </div>
-          <div style="padding: 1em 1.2em; background: #fff3ec; border-left: 3px solid var(--accent); border-radius: 0 6px 6px 0;">
-            <div class="eyebrow" style="font-size: 0.7em; margin-bottom: 0.5em;">Release Readiness review</div>
-            <ul class="clean" style="font-size: 0.9em;">
-              <li>Перед релизом — полный аудит системы по принципу <em>«может ли пользователь потерять деньги или не получить данные»</em></li>
-              <li>Претензии к системе группируются в <strong>2 фазы</strong>: до релиза (блокеры) / после релиза (улучшения)</li>
-              <li>Каждая задача с оценкой (дни) и <strong>файлами кода</strong>, которые нужно трогать</li>
-              <li>Не просто to-do, а <strong>формальный CTO-артефакт</strong> для согласования с оунером и партнёрами</li>
-              <li>Оценки учитывают ускорение от AI-ассистента: boilerplate 3–5×, бизнес-логика 1.5–2×</li>
-            </ul>
-          </div>
-        </div>
-        <p style="font-size: 0.82em; color: var(--muted); margin-top: 1.3em; max-width: 60em; line-height: 1.5;">
-          Эти документы — рабочие артефакты управления техническим циклом. Скриншоты доступны под NDA; структура и подход — универсальны.
-        </p>
-      </div>
-    </section>
-
-    <!-- 19. FinTech B2C (stealth) artifacts — architecture documentation -->
-    <section>
-      <div class="slide-pad">
-        <div class="eyebrow">Артефакты · Архитектурная документация для команды</div>
-        <h2 style="max-width: 28ch;">Система в схемах — от общей архитектуры до потока данных.</h2>
-        <div class="grid-2" style="margin-top: 1em; gap: 2vw; flex: 1; min-height: 0;">
-          <div style="display: flex; flex-direction: column; min-height: 0;">
-            <div class="eyebrow" style="font-size: 0.65em; margin-bottom: 0.3em; flex: 0 0 auto;">1 · Основная архитектура</div>
-            <div class="photo-cell" style="flex: 1 1 0; min-height: 0; background: #0d1117; display: flex; align-items: flex-start; justify-content: center; padding: 0.6em; border: 1px solid var(--line);">
-              <img src="photos/uniqlab_arch_system.png" style="max-width: 100%; max-height: 100%; width: auto; height: auto; object-fit: contain; display: block;" alt="FinTech B2C (stealth) — архитектура системы">
-            </div>
-          </div>
-          <div style="display: flex; flex-direction: column; min-height: 0;">
-            <div class="eyebrow" style="font-size: 0.65em; margin-bottom: 0.3em; flex: 0 0 auto;">2 · Поток данных: core → MySQL → web-server</div>
-            <div class="photo-cell" style="flex: 1 1 0; min-height: 0; background: #0d1117; display: flex; align-items: flex-start; justify-content: center; padding: 0.6em; border: 1px solid var(--line);">
-              <img src="photos/uniqlab_arch_dataflow.png" style="max-width: 100%; max-height: 100%; width: auto; height: auto; object-fit: contain; display: block;" alt="FinTech B2C (stealth) — поток данных">
-            </div>
-          </div>
-        </div>
-        <p style="font-size: 0.72em; color: var(--muted); margin-top: 0.9em; max-width: 74ch; line-height: 1.4; flex: 0 0 auto;">
-          Фрагменты standalone HTML-презентации в <code>docs/architecture-presentation.html</code> — 19 слайдов архитектуры системы для онбординга новых инженеров и общения со стейкхолдерами.
-        </p>
-      </div>
-    </section>
-
-    <!-- 20. FinTech B2C (stealth) artifacts — data model & indicators -->
-    <section>
-      <div class="slide-pad">
-        <div class="eyebrow">Артефакты · Модель данных и алгоритмы</div>
-        <h2 style="max-width: 28ch;">Схема пользователя и каталог индикаторов.</h2>
-        <div class="grid-2" style="margin-top: 1em; gap: 2vw; flex: 1; min-height: 0;">
-          <div style="display: flex; flex-direction: column; min-height: 0;">
-            <div class="eyebrow" style="font-size: 0.65em; margin-bottom: 0.3em; flex: 0 0 auto;">1 · Схема БД пользователя (CRM)</div>
-            <div class="photo-cell" style="flex: 1 1 0; min-height: 0; background: white; display: flex; align-items: flex-start; justify-content: center; padding: 0.6em; border: 1px solid var(--line);">
-              <img src="photos/uniqlab_crm_schema.png" style="max-width: 100%; max-height: 100%; width: auto; height: auto; object-fit: contain; display: block;" alt="FinTech B2C (stealth) — схема пользователя CRM">
-            </div>
-          </div>
-          <div style="display: flex; flex-direction: column; min-height: 0;">
-            <div class="eyebrow" style="font-size: 0.65em; margin-bottom: 0.3em; flex: 0 0 auto;">2 · Каталог индикаторов (маркировки + уровни)</div>
-            <div class="photo-cell" style="flex: 1 1 0; min-height: 0; background: #0d1117; display: flex; align-items: flex-start; justify-content: center; padding: 0.6em; border: 1px solid var(--line);">
-              <img src="photos/uniqlab_arch_indicators.png" style="max-width: 100%; max-height: 100%; width: auto; height: auto; object-fit: contain; display: block;" alt="FinTech B2C (stealth) — индикаторы">
-            </div>
-          </div>
-        </div>
-        <p style="font-size: 0.72em; color: var(--muted); margin-top: 0.9em; max-width: 74ch; line-height: 1.4; flex: 0 0 auto;">
-          Слева — полная схема сущности пользователя (статус, подписка, финансы, рефералы, профиль, KYC, контроль доступа). Справа — каталог индикаторов: маркировки объёмов (BLUE / BLACK / RED / PINK) и типы уровней (LEVEL_100, DAY_EXTREM, VOL_LEVEL, Pinbars).
+        <p style="font-size: 0.7em; color: var(--muted); margin-top: 0.8em; max-width: 82ch; line-height: 1.4; flex: 0 0 auto;">
+          Фрагменты из <code>docs/architecture-presentation.html</code> (19 слайдов) и схем данных. AI-native codebase: каждый сервис с <code>CLAUDE.md</code> + <code>AGENTS.md</code>. Плюс недельные спринты и Release Readiness review как CTO-артефакты — скриншоты под NDA.
         </p>
       </div>
     </section>
@@ -1158,24 +1057,23 @@
       </div>
     </section>
 
-    <!-- 23. Closing -->
-    <section>
-      <div class="slide-pad center">
-        <div class="eyebrow">Готов в первый круг</div>
-        <h1 style="max-width: 20ch;">Предлагаю начать с пилота на 2–3 недели.</h1>
-        <p style="font-size: 1em; color: var(--muted); max-width: 46ch; margin-top: 0.8em;">
-          Возьму одну из ваших продуктовых гипотез — от discovery до работающего прототипа в проде. Договоримся о критериях успеха на входе. Через 2–3 недели у вас будет артефакт, на котором мы решим, продолжаем ли в первый круг.
-        </p>
-        <div style="margin-top: 2em;">
-          <div class="links">
-            <p style="margin-bottom: 0.5em;"><strong>GitHub</strong> — <a href="https://github.com/beskrovnykh" target="_blank" rel="noopener" style="color: var(--accent); text-decoration: underline;">github.com/beskrovnykh</a></p>
-          </div>
-        </div>
-        <div style="margin-top: 1.5em; display: flex; gap: 2em; font-size: 0.9em; color: var(--muted); flex-wrap: wrap;">
-          <div><strong style="color: var(--ink);">Telegram</strong> @beskrovnykh</div>
-          <div><strong style="color: var(--ink);">Email</strong> andrew173139@gmail.com</div>
-          <div><strong style="color: var(--ink);">Phone</strong> +7 (923) 182-14-08</div>
-        </div>
+    <!-- 23. CTA / Closing -->
+    <section class="section-divider" style="background: var(--ink);">
+      <h4 style="color: #ff6b6b;">Давайте знакомиться</h4>
+      <h1 style="color: var(--paper); max-width: 20ch;">Напишите в Telegram — обсудим пилот.</h1>
+
+      <a href="https://t.me/beskrovnykh" target="_blank" rel="noopener" style="display: inline-block; margin-top: 1em; padding: 0.9em 1.6em; background: var(--accent); color: var(--paper); font-size: 1.3em; font-weight: 700; text-decoration: none; border-radius: 8px; letter-spacing: 0.01em; transition: transform 0.15s; width: fit-content;">
+        → t.me/beskrovnykh
+      </a>
+
+      <p style="font-size: 0.95em; color: var(--paper); opacity: 0.8; max-width: 52ch; margin-top: 1.5em; line-height: 1.5;">
+        <strong style="color: #ff6b6b;">Пилот 2–3 недели.</strong> Возьму одну из ваших продуктовых гипотез — от discovery до работающего прототипа в проде. Критерии успеха договариваем на входе. Результат решает, продолжаем ли в первый круг.
+      </p>
+
+      <div style="margin-top: 2em; display: flex; gap: 2em; font-size: 0.85em; color: var(--paper); opacity: 0.7; flex-wrap: wrap;">
+        <div><strong style="color: var(--paper); opacity: 1;">Email</strong>&nbsp; andrew173139@gmail.com</div>
+        <div><strong style="color: var(--paper); opacity: 1;">Phone</strong>&nbsp; +7 (923) 182-14-08</div>
+        <div><strong style="color: var(--paper); opacity: 1;">GitHub</strong>&nbsp; <a href="https://github.com/beskrovnykh" target="_blank" rel="noopener" style="color: #ff6b6b; text-decoration: underline;">github.com/beskrovnykh</a></div>
       </div>
     </section>
 
